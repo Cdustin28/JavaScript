@@ -67,7 +67,7 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
 
-  for(i = 0; i < DIM*DIM; i++) {
+  for(i = 0; i < DIM * DIM; i++) {
     grid[i] = {
       collapsed: false, 
       options: [BLANK, UP, RIGHT, DOWN, LEFT],  
@@ -78,16 +78,12 @@ function setup() {
     grid[0].options = [UP, DOWN];
     grid[2].options = [UP, DOWN];
     
-
-  
-  
 }
 
 function draw() {
   background(0);
   
   // Pick cell with least entropy
-  
   const gridCopy = grid.slice();
   gridCopy.sort((a, b) => {
     return a.options.length - b.options.length;
